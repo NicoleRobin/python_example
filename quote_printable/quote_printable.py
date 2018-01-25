@@ -7,9 +7,9 @@ import codecs
 
 words = open("words.txt", "r")
 for line in words.readlines():
-	print line
+	# print line
 	line = quopri.encodestring(line)
 	line = line.strip('\n')
 	line = line.replace("+", "\+")
 	line = line.replace("?", "\?")
-	print "/" + line + "/\tREJECT"
+	print "/^Subject:.*" + line + "/\tREJECT"

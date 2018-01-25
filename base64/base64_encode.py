@@ -13,4 +13,4 @@ for line in words.readlines():
 	line = line.strip('=')
 	line = line.replace("/", "\/")
 	line = line.replace("+", "\+")
-	print "/" + line + "/\tREJECT"
+	print "/^Subject:.*" + line + "/\tREJECT"
